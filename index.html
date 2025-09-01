@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chesray Esau Counselling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sage: '#A8C3A0',
+                        mint: '#CDE6C3',
+                        beige: '#F6E9D7',
+                        deepgreen: '#4F7C5A',
+                        lightgreen: '#E8F5E8'
+                    },
+                    fontFamily: {
+                        'serif': ['Crimson Text', 'serif'],
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #F6E9D7 0%, #CDE6C3 50%, #A8C3A0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .verse-text {
+            font-family: 'Crimson Text', serif;
+            line-height: 1.8;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .botanical-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.15;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .botanical-pattern {
+            animation: gentleBreeze 20s ease-in-out infinite;
+        }
+        
+        @keyframes gentleBreeze {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(2px, -3px) rotate(0.5deg); }
+            50% { transform: translate(-1px, 2px) rotate(-0.3deg); }
+            75% { transform: translate(3px, 1px) rotate(0.2deg); }
+        }
+        
+        .content-layer {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='leaf1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23CDE6C3;stop-opacity:0.6' /%3E%3Cstop offset='100%25' style='stop-color:%23A8C3A0;stop-opacity:0.3' /%3E%3C/linearGradient%3E%3ClinearGradient id='leaf2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23A8C3A0;stop-opacity:0.5' /%3E%3Cstop offset='100%25' style='stop-color:%23E8F5E8;stop-opacity:0.2' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M80 120 Q100 100 120 120 Q140 140 120 160 Q100 180 80 160 Q60 140 80 120 Z' fill='url(%23leaf1)' transform='rotate(25 100 140)'/%3E%3Cpath d='M300 80 Q320 60 340 80 Q360 100 340 120 Q320 140 300 120 Q280 100 300 80 Z' fill='url(%23leaf2)' transform='rotate(-30 320 100)'/%3E%3Cpath d='M150 350 Q170 330 190 350 Q210 370 190 390 Q170 410 150 390 Q130 370 150 350 Z' fill='url(%23leaf1)' transform='rotate(45 170 370)'/%3E%3Cpath d='M500 200 Q520 180 540 200 Q560 220 540 240 Q520 260 500 240 Q480 220 500 200 Z' fill='url(%23leaf2)' transform='rotate(-15 520 220)'/%3E%3Cellipse cx='200' cy='250' rx='12' ry='20' fill='url(%23leaf1)' transform='rotate(60 200 250)'/%3E%3Cellipse cx='450' cy='350' rx='10' ry='16' fill='url(%23leaf2)' transform='rotate(-45 450 350)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 600px 450px;
+            opacity: 0.08;
+            z-index: 1;
+            pointer-events: none;
+            animation: gentleBreeze 25s ease-in-out infinite;
+        }
+        
+        .contact-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 700'%3E%3Cdefs%3E%3ClinearGradient id='contactLeaf1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23CDE6C3;stop-opacity:0.4' /%3E%3Cstop offset='100%25' style='stop-color:%23A8C3A0;stop-opacity:0.2' /%3E%3C/linearGradient%3E%3ClinearGradient id='contactLeaf2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23A8C3A0;stop-opacity:0.3' /%3E%3Cstop offset='100%25' style='stop-color:%23E8F5E8;stop-opacity:0.1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M100 150 Q120 130 140 150 Q160 170 140 190 Q120 210 100 190 Q80 170 100 150 Z' fill='url(%23contactLeaf1)' transform='rotate(35 120 170)'/%3E%3Cpath d='M400 100 Q420 80 440 100 Q460 120 440 140 Q420 160 400 140 Q380 120 400 100 Z' fill='url(%23contactLeaf2)' transform='rotate(-25 420 120)'/%3E%3Cpath d='M700 200 Q720 180 740 200 Q760 220 740 240 Q720 260 700 240 Q680 220 700 200 Z' fill='url(%23contactLeaf1)' transform='rotate(50 720 220)'/%3E%3Cpath d='M200 400 Q220 380 240 400 Q260 420 240 440 Q220 460 200 440 Q180 420 200 400 Z' fill='url(%23contactLeaf2)' transform='rotate(-40 220 420)'/%3E%3Cpath d='M600 450 Q620 430 640 450 Q660 470 640 490 Q620 510 600 490 Q580 470 600 450 Z' fill='url(%23contactLeaf1)' transform='rotate(20 620 470)'/%3E%3Cellipse cx='300' cy='300' rx='8' ry='14' fill='url(%23contactLeaf2)' transform='rotate(70 300 300)'/%3E%3Cellipse cx='800' cy='350' rx='10' ry='18' fill='url(%23contactLeaf1)' transform='rotate(-60 800 350)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 700px 500px;
+            opacity: 0.06;
+            z-index: 1;
+            pointer-events: none;
+            animation: gentleBreeze 30s ease-in-out infinite reverse;
+        }
+        
+        .footer-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 400'%3E%3Cdefs%3E%3ClinearGradient id='footerLeaf1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23CDE6C3;stop-opacity:0.15' /%3E%3Cstop offset='100%25' style='stop-color:%23A8C3A0;stop-opacity:0.08' /%3E%3C/linearGradient%3E%3ClinearGradient id='footerLeaf2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23A8C3A0;stop-opacity:0.12' /%3E%3Cstop offset='100%25' style='stop-color:%23E8F5E8;stop-opacity:0.05' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M150 80 Q170 60 190 80 Q210 100 190 120 Q170 140 150 120 Q130 100 150 80 Z' fill='url(%23footerLeaf1)' transform='rotate(30 170 100)'/%3E%3Cpath d='M400 120 Q420 100 440 120 Q460 140 440 160 Q420 180 400 160 Q380 140 400 120 Z' fill='url(%23footerLeaf2)' transform='rotate(-35 420 140)'/%3E%3Cpath d='M650 60 Q670 40 690 60 Q710 80 690 100 Q670 120 650 100 Q630 80 650 60 Z' fill='url(%23footerLeaf1)' transform='rotate(55 670 80)'/%3E%3Cpath d='M200 250 Q220 230 240 250 Q260 270 240 290 Q220 310 200 290 Q180 270 200 250 Z' fill='url(%23footerLeaf2)' transform='rotate(-20 220 270)'/%3E%3Cpath d='M500 280 Q520 260 540 280 Q560 300 540 320 Q520 340 500 320 Q480 300 500 280 Z' fill='url(%23footerLeaf1)' transform='rotate(40 520 300)'/%3E%3Cellipse cx='350' cy='180' rx='6' ry='12' fill='url(%23footerLeaf2)' transform='rotate(65 350 180)'/%3E%3Cellipse cx='750' cy='200' rx='8' ry='15' fill='url(%23footerLeaf1)' transform='rotate(-50 750 200)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 600px 300px;
+            opacity: 0.1;
+            z-index: 1;
+            pointer-events: none;
+            animation: gentleBreeze 35s ease-in-out infinite;
+        }
+        
+        .about-content {
+            position: relative;
+            z-index: 2;
+        }
+
+
+
+        .faq-item {
+            border-bottom: 1px solid #CDE6C3;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #4F7C5A;
+            transition: color 0.2s;
+        }
+
+        .faq-question:hover {
+            color: #A8C3A0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding-top: 0;
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+            padding-top: 16px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-icon.rotated {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-white font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white/95 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 content-layer">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <img src="Images/Shadeofhope.png" alt="Shade of Hope Logo" class="w-16 h-16 mr-3">
+                        <div>
+                            <span class="text-2xl font-serif font-semibold text-deepgreen">Shade of Hope</span>
+                            <p class="text-xs text-sage font-medium">Counselling Services</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-deepgreen hover:text-sage px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-lightgreen">Home</a>
+                        <a href="#about" class="text-gray-600 hover:text-deepgreen px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-lightgreen">About</a>
+                        <a href="#services" class="text-gray-600 hover:text-deepgreen px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-lightgreen">Services</a>
+                        <a href="#consultation" class="text-gray-600 hover:text-deepgreen px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-lightgreen">Consultation</a>
+                        <a href="#faq" class="text-gray-600 hover:text-deepgreen px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-lightgreen">Ask Questions</a>
+                        <a href="#contact" class="text-gray-600 hover:text-deepgreen px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-lightgreen">Contact</a>
+                    </div>
+                </div>
+                <button class="md:hidden text-deepgreen">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient py-20 relative overflow-hidden">
+        <!-- Botanical Background Pattern -->
+        <div class="botanical-bg">
+            <svg class="botanical-pattern w-full h-full" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+                <!-- Scattered botanical leaves with watercolor effect -->
+                <defs>
+                    <linearGradient id="leaf1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#CDE6C3;stop-opacity:0.8" />
+                        <stop offset="50%" style="stop-color:#A8C3A0;stop-opacity:0.6" />
+                        <stop offset="100%" style="stop-color:#E8F5E8;stop-opacity:0.4" />
+                    </linearGradient>
+                    <linearGradient id="leaf2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#A8C3A0;stop-opacity:0.7" />
+                        <stop offset="50%" style="stop-color:#CDE6C3;stop-opacity:0.5" />
+                        <stop offset="100%" style="stop-color:#F6E9D7;stop-opacity:0.3" />
+                    </linearGradient>
+                    <filter id="softShadow">
+                        <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="#4F7C5A" flood-opacity="0.1"/>
+                    </filter>
+                </defs>
+                
+                <!-- Leaf 1 - Top left area -->
+                <path d="M120 80 Q140 60 160 80 Q180 100 160 120 Q140 140 120 120 Q100 100 120 80 Z" 
+                      fill="url(#leaf1)" filter="url(#softShadow)" transform="rotate(15 140 100)"/>
+                
+                <!-- Leaf 2 - Top right -->
+                <path d="M900 120 Q920 100 940 120 Q960 140 940 160 Q920 180 900 160 Q880 140 900 120 Z" 
+                      fill="url(#leaf2)" filter="url(#softShadow)" transform="rotate(-20 920 140)"/>
+                
+                <!-- Leaf 3 - Middle left -->
+                <path d="M80 300 Q100 280 120 300 Q140 320 120 340 Q100 360 80 340 Q60 320 80 300 Z" 
+                      fill="url(#leaf1)" filter="url(#softShadow)" transform="rotate(45 100 320)"/>
+                
+                <!-- Leaf 4 - Middle right -->
+                <path d="M1000 280 Q1020 260 1040 280 Q1060 300 1040 320 Q1020 340 1000 320 Q980 300 1000 280 Z" 
+                      fill="url(#leaf2)" filter="url(#softShadow)" transform="rotate(-30 1020 300)"/>
+                
+                <!-- Leaf 5 - Bottom left -->
+                <path d="M150 600 Q170 580 190 600 Q210 620 190 640 Q170 660 150 640 Q130 620 150 600 Z" 
+                      fill="url(#leaf1)" filter="url(#softShadow)" transform="rotate(60 170 620)"/>
+                
+                <!-- Leaf 6 - Bottom right -->
+                <path d="M950 650 Q970 630 990 650 Q1010 670 990 690 Q970 710 950 690 Q930 670 950 650 Z" 
+                      fill="url(#leaf2)" filter="url(#softShadow)" transform="rotate(-45 970 670)"/>
+                
+                <!-- Small accent leaves -->
+                <ellipse cx="300" cy="150" rx="15" ry="25" fill="url(#leaf1)" filter="url(#softShadow)" transform="rotate(30 300 150)"/>
+                <ellipse cx="800" cy="200" rx="12" ry="20" fill="url(#leaf2)" filter="url(#softShadow)" transform="rotate(-60 800 200)"/>
+                <ellipse cx="200" cy="450" rx="18" ry="28" fill="url(#leaf1)" filter="url(#softShadow)" transform="rotate(75 200 450)"/>
+                <ellipse cx="1050" cy="500" rx="14" ry="22" fill="url(#leaf2)" filter="url(#softShadow)" transform="rotate(-15 1050 500)"/>
+            </svg>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 content-layer">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="text-center lg:text-left fade-in">
+                    <h1 class="text-5xl lg:text-6xl font-serif font-semibold text-deepgreen mb-6 leading-tight">
+                        Your Safe Place
+                        <span class="text-sage block italic">for Healing</span>
+                    </h1>
+                    <div class="bg-white/80 rounded-3xl p-8 mb-8 shadow-lg backdrop-blur-sm">
+                        <p class="verse-text text-lg text-deepgreen italic leading-relaxed mb-4">
+                            "In every challenge lies an opportunity for growth, healing, and the discovery of inner strength."
+                        </p>
+                        <p class="text-sage font-medium">— A place of refuge and restoration</p>
+                    </div>
+                    <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                        Find refuge, restoration, and hope in professional counselling from the comfort of your home. 
+                        Through secure online sessions, discover the peace and healing your soul seeks.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button onclick="scrollToSection('contact')" class="bg-deepgreen hover:bg-sage text-white px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            🌿 Contact Us Today
+                        </button>
+                        <button onclick="scrollToSection('about')" class="border-2 border-sage text-sage hover:bg-sage hover:text-white px-10 py-4 rounded-full text-lg font-medium transition-all duration-300">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Hero Image Placeholder -->
+                <div class="flex justify-center lg:justify-end">
+                    <div class="relative">
+                        <div class="w-96 h-96 bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-sage/20">
+                            <img src="Images/bench.jpg" 
+                                 alt="Chesray Esau - Registered Counsellor" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        
+                        <!-- Decorative Elements -->
+                        <div class="absolute -top-4 -right-4 w-16 h-16 bg-mint rounded-full opacity-60 flex items-center justify-center">
+                            <svg class="w-8 h-8 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 w-20 h-20 bg-beige rounded-full opacity-40 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-sage" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counselor Profile Section -->
+    <section id="about" class="py-20 bg-lightgreen/30 about-bg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 about-content">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-semibold text-deepgreen mb-6">Meet Your Counselor</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Professional, compassionate care with qualified credentials and medical aid support.
+                </p>
+            </div>
+            
+            <!-- Counselor Profile Card -->
+            <div class="bg-white rounded-3xl p-8 shadow-lg mb-12 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <!-- Counselor Photo -->
+                    <div class="flex justify-center">
+                        <div class="w-64 h-64 bg-sage/10 rounded-full overflow-hidden border-4 border-sage/20">
+                            <img src="Images/profilepicture.jpg" 
+                                 alt="Chesray Esau - Registered Counsellor" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    
+                    <!-- Counselor Details -->
+                    <div class="md:col-span-2">
+                        <h3 class="text-3xl font-serif font-semibold text-deepgreen mb-4">Chesray Esau</h3>
+                        <p class="text-lg text-sage font-medium mb-4">Registered Counsellor</p>
+                        
+                        <div class="space-y-4 text-gray-700 leading-relaxed">
+                            <p>
+                                Welcome to Shade of Hope. I am a Cape Town-based registered counsellor passionate about walking alongside individuals and couples 
+                                on their journey toward healing and wholeness. I believe that true restoration comes through 
+                                compassionate, professional care in a safe and nurturing environment.
+                            </p>
+                            
+                            <p>
+                                With 10 years of counselling experience, including work at addiction care treatment centres and NGOs in Cape Town, 
+                                I combine evidence-based therapeutic techniques with holistic approaches to healing. My Cape Town private practice 
+                                creates a safe space where healing and growth can flourish, serving clients across South Africa through 
+                                secure online sessions. Whether you're struggling with anxiety, depression, trauma, grief, or 
+                                relationship challenges, I'm here to support you with compassion and professional care.
+                            </p>
+                            
+                            <div class="bg-lightgreen/30 rounded-2xl p-4 mt-6">
+                                <p class="verse-text text-deepgreen italic text-center">
+                                    "Healing is not about erasing the past, but about finding the strength to move forward 
+                                    with wisdom, compassion, and renewed hope."
+                                </p>
+                                <p class="text-sage text-center mt-2 text-sm">— Your safe space for healing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Credentials & Medical Aid Section -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-semibold text-deepgreen mb-6">Professional Credentials & Medical Aid</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Qualified, registered online counselling services with medical aid support available.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Registration Details -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-sage rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2H6C4.9 2 4.01 2.9 4.01 4L4 20C4 21.1 4.89 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM18 20H6V4H13V9H18V20Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-deepgreen">Professional Registration</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-lightgreen/50 rounded-2xl p-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">Counselor Registration Number</h4>
+                            <p class="text-2xl font-mono text-sage font-bold">PS 0045080</p>
+                            <p class="text-sm text-gray-600 mt-1">Health Professions Council of South Africa (HPCSA)</p>
+                        </div>
+                        
+                        <div class="bg-mint/30 rounded-2xl p-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">Practice Number</h4>
+                            <p class="text-2xl font-mono text-sage font-bold">1261444</p>
+                            <p class="text-sm text-gray-600 mt-1">For medical aid claims and billing</p>
+                        </div>
+                        
+                        <div class="bg-beige/50 rounded-2xl p-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">Qualifications & Experience</h4>
+                            <ul class="text-gray-700 space-y-1">
+                                <li>• Honours in Psychology (UniSA)</li>
+                                <li>• BPsych Equivalent Psychology (SACAP)</li>
+                                <li>• Post Graduate Diploma Addiction Care (UCT)</li>
+                                <li>• B.A. Community Development, Psychology Major</li>
+                                <li>• 10 years counselling experience</li>
+                                <li>• Experience at addiction care centres & NGOs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Aid Information -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-mint rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM19 19H5V5H19V19ZM17.99 9L16.58 7.58L9.99 14.17L7.41 11.6L5.99 13.01L9.99 17L17.99 9Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-deepgreen">Medical Aid Coverage</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-sage/10 rounded-2xl p-4">
+                            <h4 class="font-semibold text-deepgreen mb-3">Accepted Medical Aids</h4>
+                            <div class="grid grid-cols-2 gap-2 text-sm text-gray-700">
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 text-sage mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+                                    </svg>
+                                    Discovery Health
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 text-sage mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+                                    </svg>
+                                    Momentum Health
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 text-sage mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+                                    </svg>
+                                    Bonitas Medical Fund
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 text-sage mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+                                    </svg>
+                                    Bestmed Medical Scheme
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 text-sage mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+                                    </svg>
+                                    Medshield Medical Scheme
+                                </div>
+                                <div class="flex items-center">
+                                    <svg class="w-4 h-4 text-sage mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+                                    </svg>
+                                    Gems (Government)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-mint/20 rounded-2xl p-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">Online Sessions</h4>
+                            <div class="space-y-2 text-gray-700">
+                                <p><span class="font-medium">Platform:</span> Secure video conferencing</p>
+                                <p><span class="font-medium">Duration:</span> 50-60 minutes per session</p>
+                                <p><span class="font-medium">Availability:</span> Flexible scheduling available</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-beige/30 rounded-2xl p-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">Medical Aid Claims</h4>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                We provide detailed invoices that you can submit to your medical aid for reimbursement. Most schemes cover 
+                                counselling services from Savings or Major Medical Benefits. Online counselling is 
+                                recognized by medical aids. Contact your medical aid to confirm your specific coverage and claim directly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Associations -->
+            <div class="bg-white rounded-3xl p-8 shadow-lg">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-serif font-semibold text-deepgreen mb-4">Professional Associations & Memberships</h3>
+                    <p class="text-gray-600">Committed to ongoing professional development and ethical practice</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center p-6 bg-lightgreen/20 rounded-2xl">
+                        <div class="w-16 h-16 bg-sage rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-deepgreen mb-2">HPCSA</h4>
+                        <p class="text-sm text-gray-600">Health Professions Council of South Africa - Registered Counsellor</p>
+                    </div>
+                    
+                    <div class="text-center p-6 bg-mint/20 rounded-2xl">
+                        <div class="w-16 h-16 bg-mint rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-deepgreen mb-2">SAAP</h4>
+                        <p class="text-sm text-gray-600">South African Association of Psychologists - Active Member</p>
+                    </div>
+                    
+                    <div class="text-center p-6 bg-beige/30 rounded-2xl">
+                        <div class="w-16 h-16 bg-beige rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L13.5 2.5L16.17 5.33L10.5 11H7.5C6.12 11 5 12.12 5 13.5S6.12 16 7.5 16H9L13 20L14.5 18.5L9.83 13.83L15.5 8.17L18.33 11L19.5 9.5L21 9Z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-deepgreen mb-2">Private Practice</h4>
+                        <p class="text-sm text-gray-600">Independent Counselling Practice - 10 Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gradient-to-br from-lightgreen/30 to-mint/20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-semibold text-deepgreen mb-6">Counselling Services</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    As a registered counsellor, I provide professional support for a wide range of life challenges and mental health concerns through secure online sessions.
+                </p>
+            </div>
+            
+            <!-- Core Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                <!-- Individual Counselling -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-sage rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold text-deepgreen mb-4 text-center">Individual Counselling</h3>
+                    <ul class="text-gray-700 text-sm space-y-2">
+                        <li>• Depression and mood disorders</li>
+                        <li>• Anxiety and panic disorders</li>
+                        <li>• Stress management</li>
+                        <li>• Self-esteem and confidence issues</li>
+                        <li>• Life transitions and adjustments</li>
+                        <li>• Personal growth and development</li>
+                    </ul>
+                </div>
+
+                <!-- Relationship Counselling -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-mint rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold text-deepgreen mb-4 text-center">Relationship Counselling</h3>
+                    <ul class="text-gray-700 text-sm space-y-2">
+                        <li>• Couples communication issues</li>
+                        <li>• Marriage and partnership challenges</li>
+                        <li>• Family relationship difficulties</li>
+                        <li>• Conflict resolution</li>
+                        <li>• Trust and intimacy concerns</li>
+                        <li>• Separation and divorce support</li>
+                    </ul>
+                </div>
+
+                <!-- Trauma & Grief -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-beige rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold text-deepgreen mb-4 text-center">Trauma & Grief Support</h3>
+                    <ul class="text-gray-700 text-sm space-y-2">
+                        <li>• Trauma processing and healing</li>
+                        <li>• Grief and bereavement support</li>
+                        <li>• Post-traumatic stress symptoms</li>
+                        <li>• Loss and major life changes</li>
+                        <li>• Emotional regulation</li>
+                        <li>• Recovery and resilience building</li>
+                    </ul>
+                </div>
+
+                <!-- Workplace & Career -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-sage rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 6H16V4C16 2.89 15.11 2 14 2H10C8.89 2 8 2.89 8 4V6H4C2.89 6 2.01 6.89 2.01 8L2 19C2 20.11 2.89 21 4 21H20C21.11 21 22 20.11 22 19V8C22 6.89 21.11 6 20 6ZM14 6H10V4H14V6Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold text-deepgreen mb-4 text-center">Workplace & Career</h3>
+                    <ul class="text-gray-700 text-sm space-y-2">
+                        <li>• Work-related stress and burnout</li>
+                        <li>• Career transitions and decisions</li>
+                        <li>• Workplace conflict resolution</li>
+                        <li>• Performance anxiety</li>
+                        <li>• Work-life balance</li>
+                        <li>• Professional development support</li>
+                    </ul>
+                </div>
+
+                <!-- Behavioral Concerns -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-mint rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L13.5 2.5L16.17 5.33L10.5 11H7.5C6.12 11 5 12.12 5 13.5S6.12 16 7.5 16H9L13 20L14.5 18.5L9.83 13.83L15.5 8.17L18.33 11L19.5 9.5L21 9Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold text-deepgreen mb-4 text-center">Behavioral Support</h3>
+                    <ul class="text-gray-700 text-sm space-y-2">
+                        <li>• Anger management</li>
+                        <li>• Impulse control difficulties</li>
+                        <li>• Habit change and modification</li>
+                        <li>• Coping skills development</li>
+                        <li>• Emotional regulation</li>
+                        <li>• Healthy lifestyle changes</li>
+                    </ul>
+                </div>
+
+                <!-- Life Challenges -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-16 h-16 bg-beige rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5C16 11.11 15.41 12.59 14.44 13.73L14.71 14H15.5C15.78 14 16 14.22 16 14.5V16H14V14.5H13.5L13.5 13C13.5 12.2 12.8 11.5 12 11.5S10.5 12.2 10.5 13V14.5H9V16H7V14.5C7 14.22 7.22 14 7.5 14H8.29L8.56 13.73C7.59 12.59 7 11.11 7 9.5A6.5 6.5 0 0 1 9.5 3Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold text-deepgreen mb-4 text-center">Life Challenges</h3>
+                    <ul class="text-gray-700 text-sm space-y-2">
+                        <li>• Major life transitions</li>
+                        <li>• Identity and purpose exploration</li>
+                        <li>• Decision-making difficulties</li>
+                        <li>• Social anxiety and isolation</li>
+                        <li>• Parenting challenges</li>
+                        <li>• Aging and life stage adjustments</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Scope of Practice Information -->
+            <div class="bg-white rounded-3xl p-8 shadow-lg mb-12">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-serif font-semibold text-deepgreen mb-4">Understanding Counselling Scope</h3>
+                    <p class="text-gray-600 max-w-3xl mx-auto">
+                        As a registered counsellor, I work within a defined scope of practice to provide you with safe, effective, and ethical care.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- What I Can Help With -->
+                    <div class="bg-lightgreen/20 rounded-2xl p-6">
+                        <h4 class="font-semibold text-deepgreen mb-4 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 16.17L4.83 12L3.41 13.41L9 19L21 7L19.59 5.59L9 16.17Z"/>
+                            </svg>
+                            What I Can Help With
+                        </h4>
+                        <ul class="text-gray-700 text-sm space-y-2">
+                            <li>• Mild to moderate depression and anxiety</li>
+                            <li>• Relationship and communication issues</li>
+                            <li>• Stress management and coping strategies</li>
+                            <li>• Grief, loss, and adjustment difficulties</li>
+                            <li>• Self-esteem and confidence building</li>
+                            <li>• Life transitions and decision-making</li>
+                            <li>• Trauma processing and healing support</li>
+                            <li>• Anger management and emotional regulation</li>
+                            <li>• Work-related stress and burnout</li>
+                            <li>• Personal growth and development</li>
+                        </ul>
+                    </div>
+
+                    <!-- When to Seek Additional Support -->
+                    <div class="bg-mint/20 rounded-2xl p-6">
+                        <h4 class="font-semibold text-deepgreen mb-4 flex items-center">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11 15H13V17H11V15ZM11 7H13V13H11V7ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"/>
+                            </svg>
+                            When Additional Support May Be Needed
+                        </h4>
+                        <ul class="text-gray-700 text-sm space-y-2">
+                            <li>• Severe depression with suicidal thoughts</li>
+                            <li>• Psychotic symptoms or severe mental illness</li>
+                            <li>• Active substance abuse requiring detox</li>
+                            <li>• Eating disorders requiring medical monitoring</li>
+                            <li>• Medication management needs</li>
+                            <li>• Court-ordered assessments</li>
+                            <li>• Forensic or legal evaluations</li>
+                        </ul>
+                        <p class="text-xs text-gray-600 mt-4 italic">
+                            In these cases, I can provide supportive counselling alongside other professionals or help you find appropriate specialized care.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Therapeutic Approaches -->
+            <div class="bg-white rounded-3xl p-8 shadow-lg">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-serif font-semibold text-deepgreen mb-4">Therapeutic Approaches</h3>
+                    <p class="text-gray-600 max-w-3xl mx-auto">
+                        I use evidence-based therapeutic techniques tailored to your unique needs and goals.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center p-4 bg-sage/10 rounded-2xl">
+                        <div class="w-12 h-12 bg-sage rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-deepgreen mb-2">Cognitive Behavioral</h4>
+                        <p class="text-xs text-gray-600">Changing thought patterns and behaviors</p>
+                    </div>
+
+                    <div class="text-center p-4 bg-mint/10 rounded-2xl">
+                        <div class="w-12 h-12 bg-mint rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-deepgreen mb-2">Person-Centered</h4>
+                        <p class="text-xs text-gray-600">Focusing on your strengths and potential</p>
+                    </div>
+
+                    <div class="text-center p-4 bg-beige/30 rounded-2xl">
+                        <div class="w-12 h-12 bg-beige rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L13.5 2.5L16.17 5.33L10.5 11H7.5C6.12 11 5 12.12 5 13.5S6.12 16 7.5 16H9L13 20L14.5 18.5L9.83 13.83L15.5 8.17L18.33 11L19.5 9.5L21 9Z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-deepgreen mb-2">Solution-Focused</h4>
+                        <p class="text-xs text-gray-600">Building on what's already working</p>
+                    </div>
+
+                    <div class="text-center p-4 bg-lightgreen/30 rounded-2xl">
+                        <div class="w-12 h-12 bg-lightgreen rounded-full flex items-center justify-center mx-auto mb-3">
+                            <svg class="w-6 h-6 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5C16 11.11 15.41 12.59 14.44 13.73L14.71 14H15.5C15.78 14 16 14.22 16 14.5V16H14V14.5H13.5L13.5 13C13.5 12.2 12.8 11.5 12 11.5S10.5 12.2 10.5 13V14.5H9V16H7V14.5C7 14.22 7.22 14 7.5 14H8.29L8.56 13.73C7.59 12.59 7 11.11 7 9.5A6.5 6.5 0 0 1 9.5 3Z"/>
+                            </svg>
+                        </div>
+                        <h4 class="font-semibold text-deepgreen mb-2">Trauma-Informed</h4>
+                        <p class="text-xs text-gray-600">Safe, supportive healing approaches</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <div class="bg-lightgreen/20 rounded-2xl p-6 max-w-4xl mx-auto">
+                        <p class="verse-text text-deepgreen italic text-sm">
+                            "Every person has the capacity for growth, healing, and positive change. My role is to walk alongside you, providing professional support and guidance as you discover your own path to wellness."
+                        </p>
+                        <p class="text-sage mt-2 text-xs">— Your journey, your pace, your healing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Free Consultation Section -->
+    <section id="consultation" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-semibold text-deepgreen mb-6">Online Consultation</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Not sure if online counselling is right for you? Book a consultation to learn about our process, discuss your needs, and understand how we can support your healing journey.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <!-- What to Expect -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-sage rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2L13.09 8.26L22 9L13.09 9.74L12 16L10.91 9.74L2 9L10.91 8.26L12 2Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-deepgreen">What to Expect</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-lightgreen/30 rounded-2xl p-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">🎥 How Online Sessions Work</h4>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li>• Secure, encrypted video platform (Zoom/Teams)</li>
+                                <li>• 50-60 minute sessions from your safe space</li>
+                                <li>• Same therapeutic quality as in-person sessions</li>
+                                <li>• Flexible scheduling to fit your lifestyle</li>
+                                <li>• Technical support provided if needed</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-mint/20 rounded-2xl p-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">💰 Billing & Medical Aid Process</h4>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li>• Transparent pricing discussed upfront</li>
+                                <li>• Medical aid invoices provided (Practice #1261444)</li>
+                                <li>• Most medical aids cover online counselling</li>
+                                <li>• Payment options: EFT, card, or medical aid direct</li>
+                                <li>• No hidden fees or surprise charges</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-beige/30 rounded-2xl p-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">🤝 Your First Session Experience</h4>
+                            <ul class="text-gray-700 text-sm space-y-1">
+                                <li>• Comfortable, judgment-free environment</li>
+                                <li>• Assessment of your needs and goals</li>
+                                <li>• Explanation of therapeutic approach</li>
+                                <li>• Discussion of treatment plan options</li>
+                                <li>• Questions answered with compassion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book Your Free Consultation -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-mint rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-deepgreen">Book Your Consultation</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="text-center">
+                            <div class="bg-gradient-to-r from-sage/20 to-mint/20 rounded-3xl p-8 mb-6">
+                                <h4 class="text-3xl font-serif font-semibold text-deepgreen mb-4">Initial Consultation</h4>
+                                <p class="text-gray-700 leading-relaxed mb-4">
+                                    During your consultation, we'll discuss your specific needs, explain how online counselling works, 
+                                    review medical aid options, and answer any questions you have about the process.
+                                </p>
+                                <div class="bg-white/80 rounded-2xl p-4">
+                                    <p class="verse-text text-deepgreen italic text-sm">
+                                        "Every journey toward healing begins with a single step of courage and hope."
+                                    </p>
+                                    <p class="text-sage mt-2 text-xs">— Your invitation to healing</p>
+                                </div>
+                            </div>
+                            
+                            <button onclick="bookConsultation()" class="bg-deepgreen hover:bg-sage text-white px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 mb-4 w-full">
+                                📅 Book Consultation Now
+                            </button>
+                            
+                            <p class="text-sm text-gray-600 mb-6">Flexible scheduling available</p>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-sage/10 rounded-2xl p-4">
+                                <h5 class="font-semibold text-deepgreen mb-2">What We'll Cover:</h5>
+                                <ul class="text-sm text-gray-700 space-y-1">
+                                    <li>✓ Your personal situation and goals</li>
+                                    <li>✓ How online therapy can help you</li>
+                                    <li>✓ Technical setup and platform walkthrough</li>
+                                    <li>✓ Medical aid coverage and billing process</li>
+                                    <li>✓ Scheduling and session frequency options</li>
+                                    <li>✓ Any concerns or questions you have</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-mint/20 rounded-2xl p-4">
+                                <h5 class="font-semibold text-deepgreen mb-2">No Pressure, Just Information</h5>
+                                <p class="text-sm text-gray-700">
+                                    This consultation is purely informational. There's no obligation to book sessions, 
+                                    and you'll have all the information you need to make the best decision for your healing journey.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Frequently Asked Questions About Online Sessions -->
+            <div class="bg-white rounded-3xl p-8 shadow-lg">
+                <h3 class="text-2xl font-serif font-semibold text-deepgreen mb-8 text-center">Common Questions About Online Counselling</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-sage pl-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">Is online counselling as effective as in-person?</h4>
+                            <p class="text-sm text-gray-700">Research shows online counselling is equally effective for most concerns. You receive the same professional care, therapeutic techniques, and personal attention from the comfort of your chosen space.</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-mint pl-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">What technology do I need?</h4>
+                            <p class="text-sm text-gray-700">Just a smartphone, tablet, or computer with internet connection. We use secure, user-friendly platforms and provide technical support to ensure smooth sessions.</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-beige pl-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">How does medical aid billing work?</h4>
+                            <p class="text-sm text-gray-700">We provide detailed invoices with our practice number (1261444) that you submit to your medical aid. Most schemes recognize online counselling and reimburse from your benefits.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-sage pl-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">Is my privacy protected online?</h4>
+                            <p class="text-sm text-gray-700">Absolutely. We use encrypted, HIPAA-compliant platforms designed for healthcare. Your sessions are as private and confidential as in-person meetings.</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-mint pl-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">What if I have technical difficulties?</h4>
+                            <p class="text-sm text-gray-700">We provide pre-session technical checks and immediate support during sessions. If issues arise, we can switch to phone or reschedule at no charge.</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-beige pl-4">
+                            <h4 class="font-semibold text-deepgreen mb-2">Can I switch between online and in-person?</h4>
+                            <p class="text-sm text-gray-700">While we specialize in online sessions, we can discuss hybrid approaches during your consultation to find what works best for your healing journey.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ask Any Question Section -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-serif font-semibold text-deepgreen mb-6">Common Questions About Psychology & Counselling</h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+                    Let's address common questions and clear up misconceptions about psychology, therapy, and mental health support.
+                </p>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <!-- Common Misconceptions -->
+                <div class="bg-lightgreen/20 rounded-3xl p-8">
+                    <div class="flex items-center mb-8">
+                        <div class="w-16 h-16 bg-sage rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11 15H13V17H11V15ZM11 7H13V13H11V7ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-deepgreen">Common Misconceptions</h3>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>"Only 'crazy' people need therapy"</span>
+                                <svg class="w-5 h-5 faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-700 leading-relaxed">
+                                    <strong>Truth:</strong> Therapy is for anyone facing life's challenges. Most clients are everyday people dealing with stress, relationships, career changes, grief, or personal growth. Seeking help shows strength and self-awareness, not weakness. Just like we see doctors for physical health, psychologists help with mental and emotional wellbeing.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>"Therapy is just talking - I can talk to friends"</span>
+                                <svg class="w-5 h-5 faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-700 leading-relaxed">
+                                    <strong>Truth:</strong> While friends provide valuable support, therapy offers professional care, evidence-based techniques, and an unbiased perspective. Counsellors are trained to identify patterns, provide coping strategies, and guide you through structured healing processes that friends, despite their good intentions, cannot provide.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>"Therapy takes years and costs a fortune"</span>
+                                <svg class="w-5 h-5 faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-700 leading-relaxed">
+                                    <strong>Truth:</strong> Many people see improvements in just a few sessions. The length depends on your goals and situation. With medical aid coverage, therapy is often more affordable than people think. Online sessions also reduce travel costs and time, making therapy more accessible and convenient.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>"I should be able to handle this myself"</span>
+                                <svg class="w-5 h-5 faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-700 leading-relaxed">
+                                    <strong>Truth:</strong> We all need support sometimes. You wouldn't expect to fix a broken bone without medical help - mental health deserves the same professional care. Seeking therapy shows wisdom and courage. It's about learning tools and gaining insights that help you handle future challenges more effectively.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>"Online therapy isn't 'real' therapy"</span>
+                                <svg class="w-5 h-5 faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-700 leading-relaxed">
+                                    <strong>Truth:</strong> Research consistently shows online therapy is as effective as in-person sessions for most concerns. You receive the same professional training, therapeutic techniques, and personalized care. Many clients prefer the comfort and privacy of their own space, leading to more open and honest conversations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Practical Questions -->
+                <div class="bg-mint/20 rounded-3xl p-8">
+                    <div class="flex items-center mb-8">
+                        <div class="w-16 h-16 bg-mint rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 1L13.5 2.5L16.17 5.33L10.5 11H7.5C6.12 11 5 12.12 5 13.5S6.12 16 7.5 16H9L13 20L14.5 18.5L9.83 13.83L15.5 8.17L18.33 11L19.5 9.5L21 9Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-deepgreen">Practical Questions</h3>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How do I know if I need therapy?</span>
+                                <svg class="w-5 h-5 faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-700 leading-relaxed">
+                                    Consider therapy if you're experiencing persistent sadness, anxiety, relationship difficulties, major life changes, trauma, addiction issues, or feeling stuck. If daily activities become challenging or you're not coping as well as usual, professional support can help. You don't need to wait for a crisis - therapy is also valuable for personal growth and prevention.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What's the difference between psychologists, psychiatrists, and counsellors?</span>
+                                <svg class="w-5 h-5 faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-700 leading-relaxed">
+                                    <strong>Psychologists</strong> have advanced degrees in psychology and provide therapy and assessments. <strong>Psychiatrists</strong> are medical doctors who can prescribe medication and often work with severe mental illness. <strong>Registered Counsellors</strong> (like myself) have specialized training in counselling and therapy, focusing on talk therapy and behavioral interventions. All are valuable - the choice depends on your specific needs.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>Will my information be kept confidential?</span>
+                                <svg class="w-5 h-5 faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-700 leading-relaxed">
+                                    Absolutely. Confidentiality is a cornerstone of therapy and protected by law. Information is only shared with your written consent, except in rare circumstances involving imminent danger to yourself or others, or suspected child abuse. Even then, you'll be informed whenever possible. Your privacy and trust are sacred to the therapeutic process.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>How long does therapy typically take?</span>
+                                <svg class="w-5 h-5 faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-700 leading-relaxed">
+                                    This varies greatly depending on your goals and situation. Some people feel better after just a few sessions, while others benefit from longer-term support. We'll regularly review your progress and adjust the frequency as needed. Many clients start weekly, then move to bi-weekly or monthly sessions as they improve. You're always in control of the pace.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="faq-item">
+                            <div class="faq-question" onclick="toggleFAQ(this)">
+                                <span>What if I don't feel comfortable with my therapist?</span>
+                                <svg class="w-5 h-5 faq-icon" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M7.41 8.59L12 13.17L16.59 8.59L18 10L12 16L6 10L7.41 8.59Z"/>
+                                </svg>
+                            </div>
+                            <div class="faq-answer">
+                                <p class="text-gray-700 leading-relaxed">
+                                    The therapeutic relationship is crucial for success. If you don't feel comfortable, please discuss this openly - sometimes these conversations lead to breakthroughs. If the fit still isn't right, it's perfectly acceptable to seek another therapist. I can help you find someone who better matches your needs. Your comfort and progress are what matter most.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Contact for More Questions -->
+            <div class="text-center">
+                <div class="bg-lightgreen/20 rounded-3xl p-12">
+                    <div class="flex justify-center mb-6">
+                        <div class="w-20 h-20 bg-sage rounded-full flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-serif font-semibold text-deepgreen mb-4">Still Have Questions?</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Every question is valid and important. Whether you're curious about the process, have concerns about starting therapy, 
+                        or want to know more about how we can support your specific situation, I'm here to help with honest, compassionate answers.
+                    </p>
+                    
+                    <button onclick="sendToWhatsApp()" class="bg-sage hover:bg-deepgreen text-white px-10 py-4 rounded-full text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center">
+                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                        </svg>
+                        Ask Your Question on WhatsApp
+                    </button>
+                    
+                    <p class="text-sm text-gray-500 mt-4">Available during business hours • Compassionate, judgment-free responses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Policy & Emergency Procedures Section -->
+    <section class="py-20 bg-lightgreen/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Privacy Policy & Confidentiality -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-sage rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1ZM12 7C13.4 7 14.8 8.6 14.8 10V11.5C15.4 11.5 16 12.4 16 13V16C16 17.4 15.4 18 14.8 18H9.2C8.6 18 8 17.4 8 16V13C8 12.4 8.6 11.5 9.2 11.5V10C9.2 8.6 10.6 7 12 7ZM12 8.2C11.2 8.2 10.5 8.7 10.5 10V11.5H13.5V10C13.5 8.7 12.8 8.2 12 8.2Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-deepgreen">Privacy & Confidentiality</h3>
+                    </div>
+                    
+                    <div class="space-y-6 text-gray-700 leading-relaxed">
+                        <div>
+                            <h4 class="font-semibold text-deepgreen mb-2">Your Privacy is Sacred</h4>
+                            <p>
+                                We are committed to protecting your privacy and maintaining the highest standards of confidentiality. 
+                                All information shared during counselling sessions is strictly confidential and protected under 
+                                South African law and HPCSA professional guidelines.
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-deepgreen mb-2">Information We Collect</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Contact information for appointment scheduling</li>
+                                <li>Medical aid details for billing purposes</li>
+                                <li>Clinical notes for treatment planning</li>
+                                <li>Session recordings (only with explicit consent)</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-deepgreen mb-2">How We Protect Your Data</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Encrypted video conferencing platforms</li>
+                                <li>Secure, password-protected file storage</li>
+                                <li>Limited access to authorized personnel only</li>
+                                <li>Regular security audits and updates</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-deepgreen mb-2">When Information May Be Shared</h4>
+                            <p class="text-sm">
+                                Information is only shared with your written consent, except in rare legal circumstances: 
+                                imminent danger to self or others, suspected child abuse, or court orders. You will be 
+                                informed of any such situations whenever possible.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-lightgreen/30 rounded-2xl p-4">
+                            <p class="verse-text text-deepgreen italic text-center text-sm">
+                                "Your privacy and trust are the foundation of every healing relationship."
+                            </p>
+                            <p class="text-sage text-center mt-2 text-xs">— Protecting what matters most</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Support -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-sage rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5C22 12.27 18.6 15.36 13.45 20.03L12 21.35Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif font-semibold text-deepgreen">Professional Support</h3>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-deepgreen mb-3">After-Hours Support</h4>
+                            <div class="space-y-3 text-gray-700 text-sm">
+                                <div class="bg-sage/10 rounded-lg p-3">
+                                    <p><strong>WhatsApp Support:</strong> 075 086 4350</p>
+                                    <p class="text-xs text-gray-600 mt-1">For existing clients needing support outside office hours</p>
+                                </div>
+                                
+                                <div class="bg-mint/20 rounded-lg p-3">
+                                    <p><strong>Email Support:</strong> Shadeofhope2025@gmail.com</p>
+                                    <p class="text-xs text-gray-600 mt-1">Non-urgent concerns (response within 24 hours)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-deepgreen mb-3">Ongoing Care</h4>
+                            <p class="text-gray-700 text-sm leading-relaxed">
+                                During our sessions, we'll work together to create personalized strategies that include:
+                            </p>
+                            <ul class="list-disc list-inside text-sm text-gray-700 mt-2 space-y-1">
+                                <li>Identifying personal strengths and resources</li>
+                                <li>Developing healthy coping strategies</li>
+                                <li>Building your support network</li>
+                                <li>Creating sustainable wellness practices</li>
+                                <li>Setting achievable goals for growth</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-deepgreen mb-3">Session Support</h4>
+                            <p class="text-gray-700 text-sm">
+                                Our online sessions provide a safe, confidential space where you can explore your thoughts 
+                                and feelings with professional guidance and compassionate care.
+                            </p>
+                        </div>
+                        
+                        <div class="bg-lightgreen/30 rounded-2xl p-4">
+                            <p class="verse-text text-deepgreen italic text-center text-sm">
+                                "In times of struggle, professional support can be the bridge between pain and healing."
+                            </p>
+                            <p class="text-sage text-center mt-2 text-xs">— Hope for the hurting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white contact-bg">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 content-layer">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-serif font-semibold text-deepgreen mb-4">Get in Touch</h2>
+                <p class="text-xl text-gray-600">We're here to support you on your journey to healing</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Information with Phone Numbers -->
+                <div class="bg-lightgreen/20 rounded-3xl p-8">
+                    <h3 class="text-2xl font-serif font-semibold text-deepgreen mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Mobile Phone -->
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-mint rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17 2H7C5.9 2 5 2.9 5 4V20C5 21.1 5.9 22 7 22H17C18.1 22 19 21.1 19 20V4C19 2.9 18.1 2 17 2ZM17 18H7V6H17V18Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-deepgreen mb-1">Phone</h4>
+                                <p class="text-2xl font-bold text-sage mb-1">075 086 4350</p>
+                                <p class="text-sm text-gray-600">WhatsApp & SMS Available</p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-beige rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg class="w-6 h-6 text-deepgreen" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-deepgreen mb-1">Email</h4>
+                                <p class="text-lg text-sage font-medium">Shadeofhope2025@gmail.com</p>
+                                <p class="text-sm text-gray-600">We respond within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 p-6 bg-white rounded-2xl">
+                        <p class="verse-text text-sm text-deepgreen italic text-center">
+                            "Reaching out for help is a sign of strength, not weakness. Every healing journey begins with connection."
+                        </p>
+                        <p class="text-sage text-center mt-2 text-sm">— Your sanctuary of hope</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="bg-white border-2 border-mint/30 rounded-3xl p-8">
+                    <h3 class="text-2xl font-serif font-semibold text-deepgreen mb-6">Send us a Message</h3>
+                    
+                    <form class="space-y-6" id="contactForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-deepgreen mb-2">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required class="w-full px-4 py-3 border border-sage/30 rounded-2xl focus:ring-2 focus:ring-sage focus:border-transparent transition-colors">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-deepgreen mb-2">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required class="w-full px-4 py-3 border border-sage/30 rounded-2xl focus:ring-2 focus:ring-sage focus:border-transparent transition-colors">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-deepgreen mb-2">Email Address *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-sage/30 rounded-2xl focus:ring-2 focus:ring-sage focus:border-transparent transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-deepgreen mb-2">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 border border-sage/30 rounded-2xl focus:ring-2 focus:ring-sage focus:border-transparent transition-colors" placeholder="e.g., 075 086 4350">
+                        </div>
+                        
+                        <div>
+                            <label for="preferredContact" class="block text-sm font-medium text-deepgreen mb-2">Preferred Contact Method</label>
+                            <select id="preferredContact" name="preferredContact" class="w-full px-4 py-3 border border-sage/30 rounded-2xl focus:ring-2 focus:ring-sage focus:border-transparent transition-colors">
+                                <option value="">Select preferred method</option>
+                                <option value="phone">Phone Call</option>
+                                <option value="whatsapp">WhatsApp</option>
+                                <option value="email">Email</option>
+                                <option value="sms">SMS</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-deepgreen mb-2">Service of Interest</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 border border-sage/30 rounded-2xl focus:ring-2 focus:ring-sage focus:border-transparent transition-colors">
+                                <option value="">Select a service</option>
+                                <option value="individual">Individual Online Counselling</option>
+                                <option value="couples">Couples Online Counselling</option>
+                                <option value="anxiety">Anxiety & Depression (Online)</option>
+                                <option value="trauma">Trauma Healing (Online)</option>
+                                <option value="grief">Grief Support (Online)</option>
+                                <option value="consultation">Free Online Consultation</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="medicalAid" class="block text-sm font-medium text-deepgreen mb-2">Medical Aid (Optional)</label>
+                            <input type="text" id="medicalAid" name="medicalAid" class="w-full px-4 py-3 border border-sage/30 rounded-2xl focus:ring-2 focus:ring-sage focus:border-transparent transition-colors" placeholder="e.g., Discovery Health, Momentum, etc.">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-deepgreen mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="4" required class="w-full px-4 py-3 border border-sage/30 rounded-2xl focus:ring-2 focus:ring-sage focus:border-transparent transition-colors resize-none" placeholder="Share how we can support you on your journey..."></textarea>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input type="checkbox" id="privacy" name="privacy" required class="mt-1 mr-3 w-4 h-4 text-sage border-sage rounded focus:ring-sage">
+                            <label for="privacy" class="text-sm text-gray-700">
+                                I agree to the <a href="#" class="text-sage hover:text-deepgreen underline">Privacy Policy</a> and consent to being contacted. All communications are confidential. *
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-deepgreen hover:bg-sage text-white px-8 py-4 rounded-2xl text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            🌿 Send Message
+                        </button>
+                        
+                        <p class="text-sm text-gray-600 text-center">
+                            We'll respond within 24 hours with care and compassion.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-deepgreen text-white py-16 footer-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 content-layer">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="Images/Shadeofhope.png" alt="Shade of Hope Logo" class="w-12 h-12 mr-3 filter brightness-0 invert">
+                        <div>
+                            <span class="text-2xl font-serif font-semibold">Shade of Hope</span>
+                            <p class="text-xs text-mint">Counselling Services</p>
+                        </div>
+                    </div>
+                    <p class="text-mint mb-6 leading-relaxed">
+                        Your safe place for healing, where hope flourishes in a space of refuge, shelter and restoration.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-serif font-semibold mb-4">Contact Information</h3>
+                    <div class="space-y-2 text-mint text-sm">
+                        <p>📍 Based in Cape Town, South Africa</p>
+                        <p>📱 Phone: 075 086 4350</p>
+                        <p>📧 Shadeofhope2025@gmail.com</p>
+                        <p>🌐 Online sessions nationwide</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-serif font-semibold mb-4">Professional Details</h3>
+                    <div class="space-y-2 text-mint text-sm">
+                        <p>Registration: PS 0045080</p>
+                        <p>Practice Number: 1261444</p>
+                        <p>HPCSA Registered</p>
+                        <p>Medical Aid Accepted</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-sage/30 mt-12 pt-8 text-center">
+                <p class="text-mint">&copy; 2024 Shade of Hope Counselling Services. All rights reserved.</p>
+                <p class="text-sage text-sm mt-2 verse-text italic">"Your safe space for healing, growth, and renewed hope"</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add active state to navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-deepgreen');
+                link.classList.add('text-gray-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-gray-600');
+                    link.classList.add('text-deepgreen');
+                }
+            });
+        });
+
+        // FAQ Toggle Function
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('.faq-icon');
+            
+            if (answer.classList.contains('open')) {
+                answer.classList.remove('open');
+                icon.classList.remove('rotated');
+            } else {
+                // Close all other FAQs
+                document.querySelectorAll('.faq-answer.open').forEach(openAnswer => {
+                    openAnswer.classList.remove('open');
+                });
+                document.querySelectorAll('.faq-icon.rotated').forEach(rotatedIcon => {
+                    rotatedIcon.classList.remove('rotated');
+                });
+                
+                // Open clicked FAQ
+                answer.classList.add('open');
+                icon.classList.add('rotated');
+            }
+        }
+
+        // WhatsApp FAQ Function
+        function sendToWhatsApp() {
+            const message = "Hi! I have a question about your online counselling services. Could you please help me?";
+            const phoneNumber = "27750864350"; // Remove + and spaces
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+
+
+        // Book consultation function
+        function bookConsultation() {
+            const message = "Hi! I'd like to book a consultation to learn about your online counselling services. Could you please let me know your available times?";
+            const phoneNumber = "27750864350";
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Contact form submission (demo functionality)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const message = formData.get('message');
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hi! I'm ${firstName} ${lastName}. 
+
+Email: ${email}
+Phone: ${phone}
+
+Message: ${message}
+
+I'd like to learn more about your online counselling services.`;
+            
+            const phoneNumber = "27750864350";
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Show success message
+            alert('Thank you for your message! You\'ll be redirected to WhatsApp to complete your inquiry.');
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97206868d1abf047',t:'MTc1NTY3NzM1OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
